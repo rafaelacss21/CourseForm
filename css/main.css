@@ -15,14 +15,15 @@ body {
   border: 0.2rem solid var(--mainBrown);
 }
 .submitBtn {
-  color: var(--darkBrown);
-  background: var(--mainWhite);
-  border: 0.2rem solid var(--darkBrown);
-  transition: all 1s ease-in-out;
+  color: var(--mainWhite);
+  background: #A76D60;
+  border: 0.2rem solid #A76D60;
+  /* transition: all 1s ease-in-out; */
 }
 .submitBtn:hover {
   background: var(--darkBrown);
   color: var(--mainWhite);
+  border: 0.2rem solid var(--darkBrown);
 }
 .fail {
   border-color: red;
@@ -37,8 +38,24 @@ body {
   display: none;
 }
 :disabled {
-  opacity: 0.2 !important;
+  opacity: 0.3 !important;
+}
+.submitBtn:disabled:hover {
+  color: var(--mainWhite);
+  background: #A76D60;
+  border: 0.2rem solid #A76D60;
+  opacity: 0.3 !important;
 }
 .showItem {
   display: block;
+}
+
+.msgErrorOn {
+  color: red;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.msgErrorOff {
+  display: none;
 }

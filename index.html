@@ -27,59 +27,50 @@
      <div class="feedback text-center  text-capitalize">
       calculating.....
      </div>
-     <!-- single input -->
+     <!-- INPUTS -->
      <div class="input-group my-3">
       <div class="input-group-prepend">
        <span class="input-group-text"><i class="fas fa-user"></i></span>
       </div>
-      <input type="text" class="form-control text-capitalize name" id="name" placeholder="customer name">
+      <input type="text" class="form-control name" id="name" placeholder="Name">
      </div>
-     <!-- end of single input -->
-     <!-- single input -->
+     <p class="msgErrorOff" id="nameError">Please fill out this field!</p>
+
+
+     <div class="input-group my-3">
+      <div class="input-group-prepend">
+       <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+      </div>
+      <input type="email" class="form-control email" id="email" placeholder="Email">
+     </div>
+     <p class="msgErrorOff" id="emailError">Please fill out this field!</p>
+
      <div class="input-group my-3">
       <div class="input-group-prepend">
        <span class="input-group-text"><i class="fas fa-book"></i></span>
       </div>
-      <input type="text" class="form-control text-capitalize course" placeholder="course" id="course">
+      <input type="text" class="form-control course" id="course" placeholder="course">
      </div>
-     <!-- end of single input -->
-     <!-- single input -->
-     <div class="input-group my-3">
-      <div class="input-group-prepend">
-       <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
-      </div>
-      <input type="text" class="form-control text-capitalize author" placeholder="author" id="author">
-     </div>
-     <!-- end of single input -->
-     <button type="submit" class="btn btn-block submitBtn text-uppercase mt-4">submit</button>
+     <p class="msgErrorOff" id="courseError">Please fill out this field!</p>
+
+     <button type="submit" class="btn btn-block submitBtn mt-4">Submit</button>
     </form>
 
     <div class="loading">
      <img src="img/loading.gif" alt="">
     </div>
-    <div class="row customer-list">
 
-     <!-- single customer -->
+    <!-- CUSTOMERS LIST -->
+    <div class="row customer-list">    
      <div class="col-11 mx-auto col-md-6 col-lg-4 my-3">
       <div class="card text-left">
        <img src="img/cust-0.jpg" class="card-img-top" alt="">
        <div class="card-body">
-        <!-- customer name -->
-        <h6 class="text-capitalize "><span class="badge badge-warning mr-2">name :</span><span id="customer-name"> Rafaela Stehling</span></h6>
-        <!-- end of customer name -->
-        <!-- customer name -->
-        <h6 class="text-capitalize my-3"><span class="badge badge-success mr-2">course :</span><span id="customer-course"> JavaScript</span></h6>
-        <!-- end of customer name -->
-        <!-- customer name -->
-        <h6 class="text-capitalize"><span class="badge badge-danger mr-2">author :</span><span id="course-author"> john anderson</span></h6>
-        <!-- end of customer name -->
+        <h6><span class="badge badge-warning mr-2">Name:</span><span id="customer-name"> Rafaela Stehling</span></h6>
+        <h6><span class="badge badge-success mr-2">Email:</span><span id="customer-email"> JavaScript</span></h6>
+        <h6><span class="badge badge-danger mr-2">Course:</span><span id="course-course"> john anderson</span></h6>
        </div>
       </div>
-
-      <!-- single customer -->
-
-
-
      </div>
 
     </div>
