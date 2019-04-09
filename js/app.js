@@ -16,7 +16,7 @@
 
         const customer = new Customer(name.value, email.value, course.value);
         const display = new Display();
-        // display.feedback(customer);
+        display.feedback(customer);
         display.clearFields();
 
     });
@@ -25,7 +25,7 @@
         this.name = document.getElementById('name');
         this.email = document.getElementById('course');
         this.course = document.getElementById('email');
-        this.costumers = document.querySelector('.customer-list');
+        this.customers = document.querySelector('.customer-list');
     }
     // check fields
     Display.prototype.checkFields = function(){
@@ -82,8 +82,6 @@
         //     courseError.classList.remove('msgErrorOn');
         // }
 
-
-
         const complete = document.querySelectorAll('.complete');
         if(complete.length === 3){
             document.querySelector('.submitBtn').disabled = false;
@@ -98,8 +96,43 @@
     // show loading and feedback
     Display.prototype.feedback = function(customer){
         const feedback = document.querySelector('.feedback');
-    }
+        const loading = document.querySelector('.loading');
 
+        feedback.classList.add('showItem', 'alert', 'alert-success');
+        loading.classList.add('showItem');
+
+        const self = this;
+        self.hideSubmit();
+
+        setTimeout(function(){
+            feedback.classList.remove('showItem', 'alert', 'alert-success');
+            loading.classList.remove('showItem');
+            self.addCustomer(customer);
+        }, 2000);
+    };
+
+    Display.prototype.addCustomer = function(customer){
+        const random = this.getRandom();
+        const div = document.createElement('div');
+        div.classList.add('col-11', 'mx-auto', 'col-md-6', 'col-lg-4', 'my-3');
+        div.innerHTML = `<div class="card text-left">
+        <img src="img/cust-${random}.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+         <h6><span class="badge badge-warning mr-2">Name:</span><span id="customer-name">${customer.name}</span></h6>
+         <h6><span class="badge badge-success mr-2">Email:</span><span id="customer-email">${customer.email}</span></h6>
+         <h6><span class="badge badge-danger mr-2">Course:</span><span id="course-course">${customer.course}</span></h6>
+        </div>
+       </div>`;
+
+       this.customers.appendChild(div);
+    };
+
+    // Generates a random number to select a picture
+    Display.prototype.getRandom = function(){
+        let random = Math.floor(Math.random()*5+1); 
+        return random;
+    }
+    
     // clear fields and remove complete class with green border
     Display.prototype.clearFields = function(){
         this.name.value = '';
